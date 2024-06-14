@@ -1,0 +1,89 @@
+@startuml
+
+interface Function {
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Constant {
+    - double value
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Variable {
+    - String name
+    - double value
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Addition {
+    - Function a
+    - Function b
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Multiplication {
+    - Function a
+    - Function b
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Division {
+    - Function a
+    - Function b
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Subtraction {
+    - Function a
+    - Function b
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Exponentiation {
+    - Function base
+    - Function exponent
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class Modulus {
+    - Function a
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+class SquareRoot {
+    - Function radicand
+    - Function index
+    + double evaluate()
+    + String toString()
+    + List<String> getVariables()
+}
+
+Function <|-- Constant
+Function <|-- Variable
+Function <|-- Addition
+Function <|-- Multiplication
+Function <|-- Division
+Function <|-- Subtraction
+Function <|-- Exponentiation
+Function <|-- Modulus
+Function <|-- SquareRoot
+
+@enduml
